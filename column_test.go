@@ -9,6 +9,7 @@ import (
 
 func TestNewColumns(t *testing.T) {
 	columns, _, errParse := newColumns(
+		RootTagName,
 		&Person{},
 	)
 	require.NoError(t, errParse)

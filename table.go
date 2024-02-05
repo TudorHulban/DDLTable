@@ -15,8 +15,8 @@ type Table struct {
 	columns columns
 }
 
-func NewTable(object any) (*Table, error) {
-	columns, overrideTableName, errGetColumns := newColumns(object)
+func NewTable(rootTagName string, object any) (*Table, error) {
+	columns, overrideTableName, errGetColumns := newColumns(rootTagName, object)
 	if errGetColumns != nil {
 		return nil,
 			errGetColumns

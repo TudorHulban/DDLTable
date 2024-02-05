@@ -1,11 +1,11 @@
 package ddltable
 
 const (
-	_TagName      = "hera"
+	RootTagName = "hera"
+
 	_TagSeparator = ":"
 
-	_TagPK = "pk"
-	// _TagUnique             = "unique"
+	_TagPK                 = "pk"
 	_TagIndexed            = "index"
 	_TagIndexUnique        = "indexunique"
 	_TagRequired           = "required"

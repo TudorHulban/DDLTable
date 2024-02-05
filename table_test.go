@@ -38,6 +38,7 @@ type SQLNullTypes struct {
 
 func TestPersonsTable(t *testing.T) {
 	table, errNew := NewTable(
+		RootTagName,
 		&Person{},
 	)
 	require.NoError(t, errNew)
@@ -49,6 +50,7 @@ func TestPersonsTable(t *testing.T) {
 
 func TestTablePersonsInGroups(t *testing.T) {
 	table, errNew := NewTable(
+		RootTagName,
 		&PersonsInGroups{},
 	)
 	require.NoError(t, errNew)
@@ -60,6 +62,7 @@ func TestTablePersonsInGroups(t *testing.T) {
 
 func TestTableWSQLNullTypes(t *testing.T) {
 	table, errNew := NewTable(
+		RootTagName,
 		&SQLNullTypes{},
 	)
 	require.NoError(t, errNew)

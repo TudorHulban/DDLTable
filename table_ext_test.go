@@ -10,6 +10,7 @@ import (
 
 func TestExtPersons(t *testing.T) {
 	table, errNew := ddltable.NewTable(
+		ddltable.RootTagName,
 		&ddltable.Person{},
 	)
 	require.NoError(t, errNew)

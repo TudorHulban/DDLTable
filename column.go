@@ -24,7 +24,7 @@ type column struct {
 	IsToBeSkipped bool
 }
 
-func newColumns(object any) (columns, string, error) {
+func newColumns(rootTagName string, object any) (columns, string, error) {
 	result := make([]*column, 0)
 
 	var alreadyHavePK bool
@@ -41,7 +41,7 @@ func newColumns(object any) (columns, string, error) {
 			OrderNumber: uint(i),
 		}
 
-		if valueTag, hasTag := fieldRoot.Tag.Lookup(_TagName); hasTag {
+		if valueTag, hasTag := fieldRoot.Tag.Lookup(rootTagName); hasTag {
 			errUpdate := column.UpdateWith(valueTag, alreadyHavePK)
 			if errUpdate != nil {
 				if errUpdate.Error() == errIsOverrideTableName.Error() {
