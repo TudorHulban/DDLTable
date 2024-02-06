@@ -33,6 +33,9 @@ func reflectToPG(reflectType string, isPK bool) (string, bool) {
 	case "int", "int64", "uint":
 		return "bigint", false
 
+	case "[]uint":
+		return "bigint[]", true
+
 	case "sql.NullInt64":
 		return "bigint", true
 
