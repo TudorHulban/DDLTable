@@ -170,7 +170,7 @@ func (col *column) AsDDLPostgres() string {
 
 	if col.IsPK {
 		result = append(result,
-			"PRIMARY KEY",
+			_SQLPrimaryKey,
 		)
 	}
 
@@ -179,7 +179,7 @@ func (col *column) AsDDLPostgres() string {
 	}
 
 	if !col.IsNullable {
-		result = append(result, "NOT NULL")
+		result = append(result, _SQLNotNull)
 	}
 
 	if len(col.DefaultValue) > 0 {

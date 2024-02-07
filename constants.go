@@ -20,3 +20,8 @@ const _TagPointer = "*"
 const _FieldSeparator = ","
 
 const _indexUnique = "unique"
+
+const (
+	_SQLPrimaryKey = "primary key"
+	_SQLNotNull    = "not null"
+)
