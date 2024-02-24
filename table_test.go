@@ -25,7 +25,7 @@ type Person struct {
 type PersonsInGroups struct {
 	IDPersons uint   `hera:"index:ix_personsingroups"`
 	IDGroups  uint   `hera:"index:ix_personsingroups"`
-	Unique    string `hera:"indexunique:ixunique"`
+	FUnique   string `hera:"indexunique:ixunique"`
 }
 
 type SQLNullTypes struct {

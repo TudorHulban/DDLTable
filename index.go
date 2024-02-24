@@ -11,9 +11,19 @@ type index struct {
 }
 
 func (ix index) migrationUp() func(nameTable, nameIndex string) string {
+	if len(ix.Type) == 0 {
+		return func(nameTable, nameIndex string) string {
+			return fmt.Sprintf(
+				"create index if not exists %s on %s(\n"+strings.Join(ix.ColumnNames, ",\n")+"\n);",
+				nameIndex,
+				nameTable,
+			)
+		}
+	}
+
 	return func(nameTable, nameIndex string) string {
 		return fmt.Sprintf(
-			"create index %s if not exists %s on %s("+strings.Join(ix.ColumnNames, ",")+");",
+			"create index %s if not exists %s on %s(\n"+strings.Join(ix.ColumnNames, ",\n")+"\n);",
 			ix.Type,
 			nameIndex,
 			nameTable,
