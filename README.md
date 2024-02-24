@@ -13,15 +13,12 @@ Only simple primitives suported.
 ## Tags
 
 ```sh
-TagPK                 = "pk"
-TagUnique             = "unique"
-TagIndexed            = "index"
-TagIndexUnique        = "indexunique"
-TagRequired           = "required"
-TagDefault            = "default"
-TagOverrideColumnName = "columnname"
-TagOverrideTableName  = "tablename"
-TagOverrideOrder      = "order"
+    _TagPK                 = "pk"
+    _TagIndexName          = "index"
+    _TagIndexUnique        = "indexunique"
+    _TagRequired           = "required"
+    _TagDefault            = "default"
+    _TagOverrideColumnName = "columnname"
+    _TagOverrideTableName  = "tablename"
+    _TagOverrideOrder      = "order"
 ```
-
-
