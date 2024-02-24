@@ -23,9 +23,13 @@ type Person struct {
 }
 
 type PersonsInGroups struct {
-	IDPersons uint   `hera:"index:ix_personsingroups"`
-	IDGroups  uint   `hera:"index:ix_personsingroups"`
-	FUnique   string `hera:"indexunique:ixunique"`
+	IDPersons uint `hera:"index:ix_personsingroups"`
+	IDGroups  uint `hera:"index:ix_personsingroups"`
+
+	FUnique string `hera:"indexunique:ixunique"`
+
+	Field1 uint `hera:"index:ix_fields_personsingroups, indexunique:ixunique"`
+	Field2 uint `hera:"index:ix_fields_personsingroups, indexunique:ixunique"`
 }
 
 type SQLNullTypes struct {

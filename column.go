@@ -132,14 +132,13 @@ func (col *column) UpdateWith(tagValues string, alreadyHavePK bool) error {
 
 			col.OrderNumber = uint(order)
 
-		case _TagIndexed:
+		case _TagIndexName:
 			col.IsIndexed = true
 			col.IndexName = compoundTagValue
 
 		case _TagIndexUnique:
 			col.IsIndexed = true
 			col.IndexType = _indexUnique
-			col.IndexName = compoundTagValue
 
 		case _TagRequired:
 			col.IsNullable = false

@@ -6,7 +6,7 @@ const (
 	_TagSeparator = ":"
 
 	_TagPK                 = "pk"
-	_TagIndexed            = "index"
+	_TagIndexName          = "index"
 	_TagIndexUnique        = "indexunique"
 	_TagRequired           = "required"
 	_TagDefault            = "default"

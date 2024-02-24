@@ -23,7 +23,7 @@ func (ix index) migrationUp() func(nameTable, nameIndex string) string {
 
 	return func(nameTable, nameIndex string) string {
 		return fmt.Sprintf(
-			"create index %s if not exists %s on %s(\n"+strings.Join(ix.ColumnNames, ",\n")+"\n);",
+			"create %s index if not exists %s on %s(\n"+strings.Join(ix.ColumnNames, ",\n")+"\n);",
 			ix.Type,
 			nameIndex,
 			nameTable,
